@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cháo Bé Mơ - Dinh Dưỡng Tự Nhiên</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f3273f;
+        }
+        .image{ 
+            padding: 20px;
+            text-align: left;
+        }
+        .wecome{
+            text-align: center;
+            padding: 20px;
+        }
+        header .divBackground {
+            color: #fffefe;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        header p {
+            margin: 5px 0 0;
+            font-size: 18px;
+        }
+        nav {
+            background-color: #ff4d94;
+            padding: 10px;
+            text-align: center;
+        }
+        .chuchay{
+            
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        #menu{
+            margin-top:0px;
+            text-align: center;
+        }
+        #menu li{
+            float:left;
+            color:#009;
+            width:120px;
+            font-family:tahoma;
+            font-size:14px;
+            font-weight:bolder;
+            list-style:none;
+            text-align:center;
+            border-right:#F0C solid 1px;
+            height:20px;
+            position:relative;
+        }
+        #menu li ul
+        {
+            display:none;
+            position:absolute;
+            left:70px;
+            top:20px;
+        }
+        #menu li ul li
+        {
+            background-color:#3C9;
+            width:200px;
+            text-align:center;
+            padding-left:5px;
+            height:25px;
+            border-bottom:#309 solid 1px;
+            padding-top:5px;
+        }
+        #menu li:hover
+        {
+            color:#C30;
+        }
+        #menu li ul li:hover
+        {
+            color:#06F;
+            background:#C39;
+        }
+        #menu li:hover ul ul,
+        #menu li:hover ul ul ul,
+        #menu li:hover ul ul ul ul
+        {
+            display:none;
+            left:160px;
+            top:0px;
+        }
+        #menu li:hover ul,
+        #menu li li:hover ul,
+        #menu li li li:hover ul,
+        #menu li li li li:hover ul
+        {
+            display:block;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .section {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 28px;
+            color: #e1fd0f;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 16px;
+            color: #d4ed80;
+            margin-bottom: 20px;
+        }
+        .product {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .product-item {
+            width: 300px;
+            margin: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .product-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .product-item h3 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .product-item p {
+            font-size: 14px;
+            color: #777;
+        }
+        .product-item .price {
+            color: #e64a19;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        footer {
+            background-color: #ffcc80;
+            color: #333;
+            text-align: center;
+            padding: 10px 0;
+        }
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+
+        .divBackground{
+            background-repeat: no-repeat;
+            background-image: url(bannercode.jpg);
+            height: 100%;
+            max-height: 260px;
+            height: 260px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="divBackground">
+            <!-- <img class="imgLogo" src="logochaobemoooo.jpg" width="90px" height="90px" alt="logo"> -->
+            <p class="wecome"> WE COME TO</p>
+            <h1 >Cháo Bé Mơ</h1>
+            <p>Dinh dưỡng tự nhiên, chăm sóc sức khỏe bé yêu</p>
+        </div>
+    </header>
+    <nav>
+        <div class="chuchay">
+            <marquee direction="left" bgcolor="pink" scrollamount="10"><font color="white" size="3">CHÁO DING DƯỠNG BÉ MƠ KÍNH CHÀO QUÝ KHÁCH &nbsp;&nbsp;&nbsp;&nbsp;- BÉ MƠ ẤM LÒNG BÉ YÊN LÒNG MẸ &nbsp;&nbsp;&nbsp;&nbsp; -ODERNOW NHANH TAY VỚI NHIỀU ƯU ĐÃI ^_^</font></marquee>
+        </div>
+        <ul id="menu">
+            <li><a href="#about">Giới Thiệu</a></li>
+            <li><a href="#products">Sản Phẩm</a>
+                <ul>
+                    <li>Sản Phẩm Mới</li>
+                    <li>Cháo Khô</li>
+                    <li>Cháo ƯỚt</li>
+                </ul>
+            </li>
+            <li><a href="#benefits">Lợi Ích</a></li>
+            <li>oder Now</li>
+            <li><a href="phieudangky.html">Ưu Đãi</a></li>       
+            <li><a href="#contact">Liên Hệ</a>
+                <ul>
+                <li><a href="https://www.facebook.com/bin.bin.852565?mibextid=ZbWKwL">FaceBook</a></li>
+                <li><a href="https://zalo.me/g/ryibbx467">Zalo</a></li>
+                <li>Điện Thoại</li>
+            </li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="about" class="section">
+            <h2>Giới Thiệu Về Cháo Bé Mơ</h2>
+            <p>Cháo Bé Mơ cam kết mang đến những bữa ăn dinh dưỡng với nguyên liệu hoàn toàn tự nhiên. Chúng tôi tự hào đồng hành cùng sức khỏe và sự phát triển của bé yêu.</p>
+        </section>
+        <section id="products" class="section">
+            <h2>Sản Phẩm Của Chúng Tôi</h2>
+            <div class="product">
+                <div class="product-item">
+                    <img src="hopcamm.jpg.png" alt="Cháo Tôm và Bí Đỏ">
+                    <h3>Cháo Tôm Và Bí Đỏ</h3>
+                    <p>Bổ sung protein và vitamin tự nhiên.</p>
+                    <p class="price">40,000 VND</p>
+                </div>
+                <div class="product-item">
+                    <img src="hophong.jpg.png" alt="Cháo Cá Hồi Bí Đỏ">
+                    <h3>Cháo Cá Hồi Bí Đỏ</h3>
+                    <p>Tăng cường omega-3, tốt cho trí não.</p>
+                    <p class="price">50,000 VND</p>
+                </div>
+                <div class="product-item">
+                    <img src="hophong.jpg.png" alt="Cháo Cá Hồi Bí Đỏ">
+                    <h3>Cháo Cá Hồi Bí Đỏ</h3>
+                    <p>Tăng cường omega-3, tốt cho trí não.</p>
+                    <p class="price">50,000 VND</p>
+                </div>
+                <div class="product-item">
+                    <img src="hopxanhla.jpg.png" alt="Cháo Tôm Cải Ngọt">
+                    <h3>Cháo Tôm Cải Ngọt</h3>
+                    <p>Giàu canxi, giúp xương bé chắc khỏe.</p>
+                    <p class="price">45,000 VND</p>
+                </div>
+                <div class="product-item">
+                    <img src="hopxanhla.jpg.png" alt="Cháo Tôm Cải Ngọt">
+                    <h3>Cháo Tôm Cải Ngọt</h3>
+                    <p>Giàu canxi, giúp xương bé chắc khỏe.</p>
+                    <p class="price">45,000 VND</p>
+                </div>
+            </div>
+        </section>
+        <section id="benefits" class="section">
+            <h2>Lợi Ích Khi Chọn Cháo Bé Mơ</h2>
+            <p>✔️ 100% nguyên liệu tự nhiên, không chất bảo quản.</p>
+            <p>✔️ Được chế biến bởi đội ngũ chuyên gia dinh dưỡng.</p>
+            <p>✔️ Giao hàng nhanh chóng, tiện lợi.</p>
+        </section>
+        <section id="contact" class="section">
+            <h2>Liên Hệ</h2>
+            <p>📞 Hotline: 0394004787</p>
+            <p>📧 Email: chaobemo@gmail.com</p>
+            <p>🏠 Địa chỉ: Đống Đa, Thuận Phước, Hải Châu, TP Đà Nẵng</p>
+        </section>
+    </div>
+    <footer>
+        <p>&copy; 2024 Cháo Bé Mơ. Tất cả các quyền được bảo lưu.</p>
+    </footer>
+</body>
+</html>

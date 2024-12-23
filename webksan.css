@@ -1,0 +1,70 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    background-image: url("baitap608.jpg");
+	background-size: 1000px;
+}
+#div
+{
+	width:100px;
+}
+#menu{
+	margin-top:0px;
+	padding-left:0px;
+	width: 1200px;
+	padding-right:0px;
+}
+#menu li{
+	float:left;
+	color:#009;
+	width:140px;
+	font-family:tahoma;
+	font-size:14px;
+	font-weight:bolder;
+	list-style:none;
+	text-align:center;
+	border-right:#F0C solid 2px;
+	height:30px;
+	position:relative;
+}
+#menu li ul
+{
+	display:none;
+	position:absolute;
+	left:70px;
+	top:20px;
+}
+#menu li ul li
+{
+	background-color:#3C9;
+	width:200px;
+	text-align:left;
+	padding-left:5px;
+	height:25px;
+	border-bottom:#309 solid 1px;
+	padding-top:5px;
+}
+#menu li:hover
+{
+	color:#C30;
+}
+#menu li ul li:hover
+{
+	color:#06F;
+	background:#C39;
+}
+#menu li:hover ul ul,
+#menu li:hover ul ul ul,
+#menu li:hover ul ul ul ul
+{
+	display:none;
+	left:160px;
+	top:0px;
+}
+#menu li:hover ul,
+#menu li li:hover ul,
+#menu li li li:hover ul,
+#menu li li li li:hover ul
+{
+	display:block;
+}

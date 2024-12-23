@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slingshot Game</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+    }
+    canvas {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<canvas id="gameCanvas"></canvas>
+
+<script>
+  const canvas = document.getElementById("gameCanvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let isDragging = false;
+  let ball = { x: 150, y: canvas.height - 150, radius: 20, vx: 0, vy: 0 };
+  let anchor = { x: 150, y: canvas.height - 150 };
+  const gravity = 0.5;
+  const friction = 0.99;
+  const targets = [{ x: 800, y: canvas.height - 100, width: 50, height: 50 }];
+
+  function drawBall() {
+    ctx.beginPath();
+    ctx.arc(ball.x, ball.y, ball.radius, 0, Math.PI * 2);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+    ctx.closePath();
+  }
+
+  function drawSlingshot() {
+    ctx.beginPath();
+    ctx.moveTo(anchor.x, anchor.y);
+    ctx.lineTo(ball.x, ball.y);
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 3;
+    ctx.stroke();
+    ctx.closePath();
+  }
+
+  function drawTargets() {
+    targets.forEach((target) => {
+      ctx.fillStyle = "red";
+      ctx.fillRect(target.x, target.y, target.width, target.height);
+    });
+  }
+
+  function updateBall() {
+    if (!isDragging) {
+      ball.vy += gravity; // Apply gravity
+      ball.vx *= friction; // Apply friction
+      ball.vy *= friction;
+      ball.x += ball.vx;
+      ball.y += ball.vy;
+
+      // Bounce off the ground
+      if (ball.y + ball.radius > canvas.height) {
+        ball.y = canvas.height - ball.radius;
+        ball.vy *= -0.7; // Bounce factor
+      }
+
+      // Bounce off the walls
+      if (ball.x - ball.radius < 0 || ball.x + ball.radius > canvas.width) {
+        ball.vx *= -1;
+      }
+    }
+  }
+
+  function detectCollision() {
+    targets.forEach((target, index) => {
+      if (
+        ball.x + ball.radius > target.x &&
+        ball.x - ball.radius < target.x + target.width &&
+        ball.y + ball.radius > target.y &&
+        ball.y - ball.radius < target.y + target.height
+      ) {
+        targets.splice(index, 1); // Remove the target
+      }
+    });
+  }
+
+  canvas.addEventListener("mousedown", (e) => {
+    const dx = e.clientX - ball.x;
+    const dy = e.clientY - ball.y;
+    if (Math.sqrt(dx * dx + dy * dy) <= ball.radius) {
+      isDragging = true;
+    }
+  });
+
+  canvas.addEventListener("mousemove", (e) => {
+    if (isDragging) {
+      ball.x = e.clientX;
+      ball.y = e.clientY;
+    }
+  });
+
+  canvas.addEventListener("mouseup", () => {
+    if (isDragging) {
+      ball.vx = (anchor.x - ball.x) * 0.2;
+      ball.vy = (anchor.y - ball.y) * 0.2;
+      isDragging = false;
+    }
+  });
+
+  function gameLoop() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    drawSlingshot();
+    drawBall();
+    drawTargets();
+
+    updateBall();
+    detectCollision();
+
+    requestAnimationFrame(gameLoop);
+  }
+
+  gameLoop();
+</script>
+</body>
+</html>

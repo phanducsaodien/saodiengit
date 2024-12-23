@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<html>
+        <script >
+			function Register(){
+				var txtFullName   	= document.getElementById('txtFullName');
+				var txtAddress  	= document.getElementById('txtAddress');
+				var txtPhone     	= document.getElementById('txtPhone');
+				var txtMale 		= document.getElementById('txtMale');
+				var txtFemale 		= document.getElementById('txtFemale');
+				var job     		= document.getElementById('cboJob');
+				var product 		= document.getElementById('cboProduct');
+				var tb      		= document.getElementById('tb');
+				var txtNumber  = document.getElementById('txtNumber');
+				if (txtFullName.value.trim() == '')
+					alert('Họ và tên không được để trống !');	 
+				else
+				{
+				   if (txtAddress.value.trim() == '') 
+						alert('địa chỉ không được để trống !');	   
+				  else {
+					  if (txtPhone.value.trim() == '') 
+						  alert('Số điện thoại không được để trống !');
+						  else{
+							if (txtMale.checked == false && txtFemale.checked == false) 
+								alert('Vui lòng chọn giới tính');
+								else{
+									if (txtNumber.value.trim() == '') 
+										alert('Vui lòng nhập số người tham gia');
+
+								else 
+									  tb.innerHTML="Bạn đã nhận được ưu đãi cháo bé MUA NGAY!!!";
+								}
+						  }
+					}
+				}
+
+			}
+        </script>
+    <body bgcolor="#FF33CC">
+		<img src="bannercode.jpg"height="300px"
+        <table  border="3" align="center" cellpadding="0" cellspacing="0" bgcolor="#FF66FF"bordercolor="#FFFF33">
+			<tr> 
+				<td align="center" style="font-size: 30px;color: rgb(255, 252, 252);font-weight: bold">đăng ký tham gia ưu đãi từ cháo bé mơ</td>       
+			</tr>
+	 		<tr>
+	 		  <td>
+			<table border="2" style="background-color:pink;width: 450px;border-color:antiquewhite " cellpadding="0" cellspacing="0">
+			</td>
+			</tr>
+				<tr>
+					<td>
+						Họ và tên
+					</td>
+					<td><input type="text" id="txtFullName">
+					</td>
+				</tr>
+				<tr>
+					<td>
+
+							Địa chỉ</td>
+					<td>
+						<input type="text" id="txtAddress">
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Điện thoại
+					</td>
+					<td>
+						<input type="text" id="txtPhone">
+					</td>
+				</tr>
+				<tr>
+					<td>
+					Phái</td>
+					<td>
+
+					<span style="margin-left: 35px;">Nam: </span><input type="radio" name="txtSex" id="txtMale" value="Nam">
+					<span>Nữ: </span><input type="radio" name="txtSex" id="txtFemale" value="Nữ">
+					</td>
+				</tr>
+				<tr>
+					<td>
+					Nghề nghiệp</td>
+					<td><select name="job" id="cboJob">
+					  <option value="doctor">Bác sĩ</option>
+					  <option value="engineer">Kĩ sư</option>
+					  <option value="teacher">Giáo viên </option>
+					  <option value="other">Khác</option>
+				    </select></td>
+				</tr>
+				<tr>
+					<td>
+					Chọn sản phẩm tham gia</td>
+					<td>
+						<select name="product" id="cboProduct">
+							<option value="1">Cháo Khô</option>
+							<option value="2">Cháo Ướt</option>
+							<option value="3">Combe 1 </option>
+							<option value="4">Combe 2</option>
+						  </select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Số lượng dự đoán</td>
+					<td>
+						<input type="text" id="txtNumber">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center">
+						<button onclick="Register()">Đồng ý</button>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center" >
+						<span id="tb"></span>
+					</td>
+				</tr>
+			</table>
+		</td>
+		</tr>
+   </table>
+    </body>
+</html>
+

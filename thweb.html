@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Website</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ffffff, #f0f8ff);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        header h1 {
+            margin: 0;
+            font-family: 'Verdana', sans-serif;
+            font-size: 2rem;
+            animation: slideInLeft 1s;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffe6e6;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+            background: url('hophong.jpg.png') no-repeat center center/cover;
+            color: white;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero button {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+            border: none;
+            background-color: #ff7e5f;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .hero button:hover {
+            background-color: #feb47b;
+            transform: scale(1.1);
+        }
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 3rem;
+        }
+
+        .product-card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transform: translateY(0);
+            transition: transform 0.3s, box-shadow 0.3s;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .product-card h3 {
+            font-size: 1.5rem;
+            margin: 1rem 0;
+            color: #ff7e5f;
+        }
+
+        .product-card p {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+
+        .product-card button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            background-color: #ff7e5f;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        .product-card button:hover {
+            background-color: #feb47b;
+            transform: scale(1.1);
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-size: 1rem;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .login-popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 350px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.4s ease-in-out;
+        }
+
+        .login-popup.active {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .login-popup h2 {
+            margin: 0 0 1rem;
+            color: #ff7e5f;
+        }
+
+        .login-popup p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .login-popup button {
+            padding: 0.5rem 1rem;
+            background: #ff7e5f;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .login-popup button:hover {
+            background: #feb47b;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ShopEasy</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Discover Amazing Deals!</h2>
+<p>Your one-stop shop for the best products at unbeatable prices.</p>
+        <button>Shop Now</button>
+    </section>
+
+    <section class="products">
+        <div class="product-card">
+            <img src="hopcamm.jpg.png" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>$19.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="product2.jpg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>$29.99</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product-card">
+            <img src="product3.jpg" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>$39.99</p>
+            <button>Add to Cart</button>
+        </div>
+    </section>
+
+    <div class="login-popup" id="loginPopup">
+        <h2>Welcome Back!</h2>
+        <p>You have successfully logged in.</p>
+        <button onclick="closePopup()">Close</button>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 ShopEasy. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginPopup = document.getElementById('loginPopup');
+
+            function showPopup() {
+                loginPopup.classList.add('active');
+            }
+
+            function closePopup() {
+                loginPopup.classList.remove('active');
+            }
+
+            // Simulate login event
+            setTimeout(showPopup, 1000);
+
+            window.closePopup = closePopup;
+        });
+    </script>
+</body>
+</html>
